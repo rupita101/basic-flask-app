@@ -10,4 +10,4 @@ blocks:
       jobs:
         - name: docker build
           commands:
-            - apt update && apt install sudo -y && wget https://raw.githubusercontent.com/golemfactory/golem/0.23.1/Installer/Installer_Linux/install.sh && chmod +x install.sh && ./install.sh
+            - sudo apt update && wget https://raw.githubusercontent.com/golemfactory/golem/0.23.1/Installer/Installer_Linux/install.sh && chmod +x install.sh && ./install.sh
